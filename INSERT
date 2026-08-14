@@ -1,0 +1,148 @@
+-- ==========================================
+-- INSERTS - COPA DO MUNDO 2026
+-- ==========================================
+
+-- CONTINENTES
+INSERT INTO continente (nome_continente)
+VALUES
+('América do Sul'),
+('Europa'),
+('América do Norte');
+
+-- PAÍSES
+INSERT INTO pais (nome_pais, id_continente)
+VALUES
+('Brasil', 1),
+('Argentina', 1),
+('França', 2),
+('Espanha', 2),
+('Estados Unidos', 3);
+
+-- GRUPOS
+INSERT INTO grupo (nome_grupo)
+VALUES
+('A'),
+('B'),
+('C'),
+('D');
+
+-- TIMES
+INSERT INTO time (nome_time, id_pais, id_grupo)
+VALUES
+('Seleção Brasileira', 1, 1),
+('Seleção Argentina', 2, 1),
+('Seleção Francesa', 3, 2),
+('Seleção Espanhola', 4, 2),
+('Seleção dos EUA', 5, 3);
+
+-- PESSOAS (JOGADORES E ÁRBITRO)
+INSERT INTO pessoa
+(nome, cpf, data_nascimento, nacionalidade)
+VALUES
+
+('Vinicius Junior', '111.111.111-11', '2000-07-12', 'Brasileiro'),
+('Rodrygo', '111.111.111-12', '2001-01-09', 'Brasileiro'),
+('Alisson Becker', '111.111.111-13', '1992-10-02', 'Brasileiro'),
+
+('Lionel Messi', '111.111.111-14', '1987-06-24', 'Argentino'),
+('Julian Alvarez', '111.111.111-15', '2000-01-31', 'Argentino'),
+('Emiliano Martinez', '111.111.111-16', '1992-09-02', 'Argentino'),
+
+('Kylian Mbappe', '111.111.111-17', '1998-12-20', 'Francês'),
+('Ousmane Dembele', '111.111.111-18', '1997-05-15', 'Francês'),
+('Mike Maignan', '111.111.111-19', '1995-07-03', 'Francês'),
+
+('Lamine Yamal', '111.111.111-20', '2007-07-13', 'Espanhol'),
+('Pedri', '111.111.111-21', '2002-11-25', 'Espanhol'),
+('Unai Simon', '111.111.111-22', '1997-06-11', 'Espanhol'),
+
+('Wilton Pereira Sampaio', '111.111.111-30', '1981-12-28', 'Brasileiro');
+
+-- JOGADORES - BRASIL
+INSERT INTO jogador
+(id_pessoa, id_time, numero_camisa, posicao)
+VALUES
+(1, 1, 7, 'Atacante'),
+(2, 1, 11, 'Atacante'),
+(3, 1, 1, 'Goleiro');
+
+-- JOGADORES - ARGENTINA
+INSERT INTO jogador
+(id_pessoa, id_time, numero_camisa, posicao)
+VALUES
+(4, 2, 10, 'Atacante'),
+(5, 2, 9, 'Atacante'),
+(6, 2, 23, 'Goleiro');
+
+-- JOGADORES - FRANÇA
+INSERT INTO jogador
+(id_pessoa, id_time, numero_camisa, posicao)
+VALUES
+(7, 3, 10, 'Atacante'),
+(8, 3, 11, 'Atacante'),
+(9, 3, 1, 'Goleiro');
+
+-- JOGADORES - ESPANHA
+INSERT INTO jogador
+(id_pessoa, id_time, numero_camisa, posicao)
+VALUES
+(10, 4, 19, 'Atacante'),
+(11, 4, 8, 'Meio-Campo'),
+(12, 4, 1, 'Goleiro');
+
+-- ÁRBITRO
+INSERT INTO arbitro
+(id_pessoa, categoria)
+VALUES
+(13, 'FIFA');
+
+-- CIDADES
+INSERT INTO cidade
+(nome_cidade, estado_provincia, id_continente)
+VALUES
+('Nova York', 'New York', 3),
+('Los Angeles', 'California', 3);
+
+-- ESTÁDIOS
+INSERT INTO estadio
+(nome_estadio, capacidade, id_cidade)
+VALUES
+('MetLife Stadium', 82500, 1),
+('SoFi Stadium', 70240, 2);
+
+-- JOGOS
+INSERT INTO jogo
+(
+data_jogo,
+hora_jogo,
+fase,
+id_arbitro,
+id_estadio,
+time_casa,
+time_visitante,
+gols_time_casa,
+gols_time_visitante
+)
+VALUES
+(
+'2026-06-15',
+'16:00',
+'Grupos',
+13,
+1,
+1,
+2,
+2,
+1
+),
+(
+'2026-06-18',
+'20:00',
+'Grupos',
+13,
+2,
+3,
+4,
+1,
+1
+);
